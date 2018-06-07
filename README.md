@@ -1,3 +1,3 @@
 # myPro
 
-uc
+unix c

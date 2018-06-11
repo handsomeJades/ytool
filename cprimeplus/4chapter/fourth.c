@@ -10,7 +10,7 @@ int main()
 	//字符串栈分配
 	char name[]="clock";
 
-	memset(name,'0',sizeof(name)-1);
+	memset(name,'A',sizeof(name)-1);
 	//	printf("%X\n",sizeof name);	
 	name[0]='C';
 	//print format

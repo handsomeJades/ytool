@@ -12,8 +12,8 @@ double average(int num,...)
 	//int sum=0;
 	int argv;
 	for(i=0;i<num;i++){
-		argv=va_arg(valist,int);
-		printf("参数%d为%d\n",i,argv); /*获取可变参数*/
+		argv=va_arg(valist,int); /*获取可变参数*/
+		printf("参数%d为%d\n",i,argv); 
 		sum = sum+argv;
 	}
 

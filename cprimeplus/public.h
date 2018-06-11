@@ -3,6 +3,7 @@
 
 #include<stdio.h>
 #include<string.h>
+
 #define prd(x) printf("%d\n",x)
 
 #endif

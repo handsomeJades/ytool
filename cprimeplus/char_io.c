@@ -14,6 +14,8 @@ int main()
 	scanf("%s",a);
 	printf("%s\n",a);
 	printf("%d\n",swap1(1,2));
+
+	fputs("jades",stdout);
 }
 
 int swap1(int a,int b){

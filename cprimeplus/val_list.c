@@ -23,7 +23,7 @@ double average(int num,...)
 	return sum/num;
 }
 
-int main(){
+int main(int argc,char *argv){
 	//可变数量参数
 	printf("average = %6.2f",average(4,2,3,4,5));
 

@@ -3,10 +3,18 @@
 int swap1(int,int);
 int main()
 {
-//	FILE * fp=fopen("tmp.txt","w+");
-//	
-//	printf("%d\n",sizeof(stdin));
-//		
+	//字符串io
+	FILE * fp=fopen("tmp.txt","rw+");
+	char buffer[100];
+	fgets(buffer,10,fp);
+	fputs(buffer,stdout);
+
+	char *s=buffer;
+	sprintf(s,"%d+%d\n",1,2);
+	puts(s);
+	return 0;
+	printf("%d\n",sizeof(stdin));
+		
 //	fprintf(fp,"Hello %s!\n","jades");
 	
 	char a[10];

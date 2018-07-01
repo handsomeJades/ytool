@@ -15,8 +15,8 @@ int main()
 	return 0;
 	printf("%d\n",sizeof(stdin));
 		
-//	fprintf(fp,"Hello %s!\n","jades");
-	
+	fprintf(fp,"Hello %s!\n","jades");
+
 	char a[10];
 	scanf("%*s");
 	scanf("%s",a);

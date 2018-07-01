@@ -16,11 +16,11 @@ int main()
 	signal(SIGUSR2,sig_user);	
 	//signal(SIGUSR3,sig_user);	
 
-	while(1)
-	{	
+	//while(1)
+//	{	
 		//printf("s\n");
 		pause();
-	}	
+//	}	
 
 }
 

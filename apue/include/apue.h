@@ -3,6 +3,8 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<unistd.h>
+#include<signal.h>
 /*
  * 错误处理
  */

@@ -27,7 +27,6 @@ static void sig_handle(int signo)
 {
 	switch(signo){
 		case SIGINT:
-			//puts("SIGINT触发了sig_handle()");
 			fprintf(stdout,"SIGINT触发了sig_handle()\n");
 			exit(0);
 		case SIGUSR1:

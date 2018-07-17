@@ -18,15 +18,15 @@ int main()
 	}else if(pid>0){
 		int i;
 		for(i=10;i<15;i++){
-		//	fprintf(fp,"Hello %d!",i);
-			fprintf(stdout,"parent %d!\n",i);
+			fprintf(fp,"Hi %d!\n",i);
+		//	fprintf(stdout,"parent %d!\n",i);
 		//	sleep(0.5);
 		}
 	}else{
 		int i;
-		for(i=0;i<5;i++)
+//////////////////		for(i=0;i<5;i++)
 		//	fprintf(fp,"Hello %d!\n",i);
-			fprintf(stdout,"child %d!\n",i);
+//			fprintf(stdout,"child %d!\n",i);
 	}
 
 	fclose(fp);

@@ -17,12 +17,14 @@ int main()
 		err_sys("fork_error");
 	}else if(pid>0){
 		int i;
+		sleep(5);
 		for(i=10;i<15;i++){
 			fprintf(fp,"Hi %d!\n",i);
 		//	fprintf(stdout,"parent %d!\n",i);
 		//	sleep(0.5);
 		}
 	}else{
+		sleep(5);
 		int i;
 //////////////////		for(i=0;i<5;i++)
 		//	fprintf(fp,"Hello %d!\n",i);

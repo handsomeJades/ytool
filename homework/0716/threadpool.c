@@ -32,6 +32,7 @@ void init_pool(int);
 void *job_func(void *);
 void printids(int);
 void add_job();
+void destroy_pool();
 
 int main()
 {
@@ -49,6 +50,8 @@ int main()
 		printf("job id:%d\n",ptr->id);
 		ptr=ptr->next;
 	}*/
+
+	destroy_pool();
 
 	return 0;
 }

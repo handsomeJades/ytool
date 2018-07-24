@@ -5,7 +5,7 @@
 #include<netinet/in.h>
 #include<string.h>
 
-#define PORT 8800
+#define PORT 8080
 #define BACKLOG 6
 
 
@@ -38,26 +38,47 @@ int main()
 
 	//while(1){
 
-	int clfd=accept(sfd,(struct sockaddr *)&conn_addr,(socklen_t *)&con_len);
-	printf("kid client ip : %ld\n",conn_addr.sin_addr.s_addr);
-	printf("kid client port : %ld\n",ntohl(conn_addr.sin_port));
-	printf("p client fd : %d\n",clfd);
-	//printf("recieved--->\n");
-	pid_t pid;
-	if((pid=fork())<0){
-		puts("fork error");
-		exit(1);
-	}else if(pid==0){
-		sleep(3);
-		printf("kid client fd : %d\n",clfd);
-		exit(0);
-	}
+		int clfd=accept(sfd,(struct sockaddr *)&conn_addr,(socklen_t *)&con_len);
 
-	//}
-
-	return 0;
+		char msg[]="HTTP/1.1 200 OK\r\nContent-Type:text/html\r\n\r\n<html><body><h1 align=\"center\">hello-<i>socket</i></h1></body></html>";
+		//char msg[]=" HTTP/1.1 200 OK\r\nServer:skynet\r\nContent-Type:text/html;charset=utf-8\r\nContent-Length:948";
+		send(clfd,"123",4,0);
+	sleep(2);
+		close(clfd);
 
 
 
-	daemon(0,0);
+		//char msg1[]="123";
+		//send(clfd,msg,strlen(msg),0);
+
+//		char msg1[]="<br><b>oh-<i>socket</i></b>";
+//		send(clfd,msg1,strlen(msg1),0);
+
+		//sleep(10);
+		//close(clfd);
+//		printf("kid client ip : %ld\n",conn_addr.sin_addr.s_addr);
+//		printf("kid client port : %ld\n",ntohl(conn_addr.sin_port));
+//		printf("p client fd : %d\n",clfd);
+		//printf("recieved--->\n");
+		/*pid_t pid;
+		if((pid=fork())<0){
+			puts("fork error");
+			exit(1);
+		}else if(pid==0){
+			printf("p client fd : %d\n",clfd);
+			puts(msg);
+			send(clfd,msg,strlen(msg),0);
+			close(clfd);
+			exit(0);
+		}*/
+
+//		close(sfd);
+
+//		}
+
+		return 0;
+
+
+
+		daemon(0,0);
 }

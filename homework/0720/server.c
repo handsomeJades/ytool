@@ -42,14 +42,13 @@ int main()
 
 		char msg[]="HTTP/1.1 200 OK\r\nContent-Type:text/html\r\n\r\n<html><body><h1 align=\"center\">hello-<i>socket</i></h1></body></html>";
 		//char msg[]=" HTTP/1.1 200 OK\r\nServer:skynet\r\nContent-Type:text/html;charset=utf-8\r\nContent-Length:948";
-		send(clfd,"123",4,0);
-	sleep(2);
+		//send(clfd,"123",4,0);
+		send(clfd,msg,strlen(msg),0);
 		close(clfd);
 
 
 
 		//char msg1[]="123";
-		//send(clfd,msg,strlen(msg),0);
 
 //		char msg1[]="<br><b>oh-<i>socket</i></b>";
 //		send(clfd,msg1,strlen(msg1),0);

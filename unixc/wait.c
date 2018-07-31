@@ -13,5 +13,10 @@ int main()
 	}
 
 	wait(&status);
+	switch(status)
+	{
+		
+
+	}
 	puts("123");
 }

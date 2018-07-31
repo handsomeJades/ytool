@@ -1,0 +1,7 @@
+<?php
+
+go(function () {
+		co::sleep(0.5);
+		echo "hello";
+		});
+//print_r(co::gethostbyname('www.baidu.com'));

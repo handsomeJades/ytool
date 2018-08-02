@@ -1,3 +1,0 @@
-perpose:
-
-main idea:

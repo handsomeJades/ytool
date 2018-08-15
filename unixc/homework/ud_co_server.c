@@ -6,6 +6,7 @@
 #include<bits/socket.h>
 #include<netinet/in.h>
 #include<string.h>
+#include"fd_pass.h"
 
 #define UNIX_DOMIN_PATH "/tmp/test.sock"
 #define BACKLOG 6
@@ -24,12 +25,13 @@ int main(){
 	char reponse[11];
 	long size=0;
 	while(1){
-		if((size=recv(sfd,reponse,11,0))==-1)
+		/*if((size=recv(sfd,reponse,11,0))==-1)
 		{
 			perror("recv()");
-		}
+		}*/
+		int rfd=recv_fd(sfd);
+		printf("received fd= %d\n",rfd);
 	}
-	printf("%20d %s",size,reponse);
 
 	return 0;
 }

@@ -8,7 +8,7 @@
 #include<string.h>
 #include"fd_pass.h"
 
-#define UNIX_DOMIN_PATH "/tmp/test.sock"
+//#define UNIX_DOMIN_PATH "/tmp/test.sock"
 #define BACKLOG 6
 int main()
 {
@@ -37,6 +37,9 @@ int main()
 		int cfd=accept(sfd,NULL,NULL);
 		printf("unix fd : %d\n",cfd);
 		char msg[]="hello world";
+		int rfd=recv_fd(sfd);
+		printf("recv fd:%d\n",rfd);
+		continue;
 		send_fd(cfd,cfd);
 		/*if(send(cfd,msg,strlen(msg),0)==-1)
 		{

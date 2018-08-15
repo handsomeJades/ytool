@@ -1,6 +1,6 @@
 <?php
 
-print_r(co::getaddrinfo('http://www.baidu.com'));
+//print_r(Swoole\Coroutine::getaddrinfo('http://www.baidu.com'));
 echo Swoole\Coroutine::getuid();
 echo "\n";
 go(function () {

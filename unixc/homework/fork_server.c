@@ -45,9 +45,7 @@ int main()
 		//
 		char *msg = "HTTP/1.1 200 OK\r\n"
 				"Server: Cleey's Server V1.0\r\n"
-				"Accept-Ranges: bytes\r\n"
 				"Content-Length: 5\r\n"
-				"Connection: close\r\n"
 				"connection:keep-alive\r\n"
 				"Content-Type: text/html\r\n\r\nhello";
 

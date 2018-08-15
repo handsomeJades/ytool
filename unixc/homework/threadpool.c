@@ -1,3 +1,9 @@
+/**
+ * thread pool
+ *
+ * maintain a pool which deal with the job of the job link list. 
+ * using condition variable to avoid competition. 
+ */
 #include<stdio.h>
 #include<assert.h>
 #include<stdlib.h>
@@ -32,7 +38,7 @@ void init_pool(int);
 void *job_func(void *);
 void printids(int);
 void add_job();
-//void destroy_pool();
+void destroy_pool();
 
 int main()
 {
@@ -43,7 +49,7 @@ int main()
 	for(i=0;i<JOB_NUM;i++)
 		add_job();
 
-	sleep(1);
+	sleep(5);
 	/*printf("%d\n",pool->jobs_num);
 	struct job * ptr=pool->job_head;
 	while(ptr){
@@ -51,7 +57,7 @@ int main()
 		ptr=ptr->next;
 	}*/
 
-//	destroy_pool();
+	destroy_pool();
 
 	return 0;
 }
@@ -141,7 +147,6 @@ void add_job()
 
 void printids(int job_id)
 {
-	//srand(time(NULL));
 	srand(job_id);
 	pthread_t tid=pthread_self();
 	printf("job id is %d,randnum is %d,thread id is %lu \n",job_id,rand(),(unsigned long)tid);

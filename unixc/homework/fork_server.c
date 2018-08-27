@@ -2,15 +2,17 @@
 #include<signal.h>
 #include<stdlib.h>
 #include<unistd.h>
+#include<errno.h>
 #include<sys/socket.h>
 #include<netinet/in.h>
 #include<string.h>
 #include<fcntl.h>
 
 #define PORT 8080
-#define BACKLOG 6
+#define BACKLOG 100
 
 
+void sig_chld(int signo);
 int main()
 {
 		int sfd;	
@@ -38,7 +40,7 @@ int main()
 				exit(1);
 		}
 
-		signal(SIGCLD,SIG_IGN);
+		signal(SIGCHLD,SIG_IGN);
 
 		int clfd;
 		//char msg[]="HTTP/1.1 200 OK\r\nContent-Type:text/html";
@@ -50,20 +52,33 @@ int main()
 				"Content-Type: text/html\r\n\r\nhello";
 
 		char buf[100];
+		int status;
 		while(1){
 				clfd=accept(sfd,(struct sockaddr *)&conn_addr,(socklen_t *)&con_len);
+				if(clfd<0){
+					if(errno==EINTR)
+						continue;
+					else
+						perror("accept");
+				}
 
 				int pid=0;
 				if((pid=fork())<0){
 					perror("fork()");
 				}else if(pid==0){
 					close(sfd);
-					//int len=recv(clfd,buf,sizeof(buf),0);
+					int len=recv(clfd,buf,sizeof(buf),0);
 					send(clfd,msg,strlen(msg),0);
 					close(clfd);
 					exit(0);
 				}
+
+				close(clfd);
+				
+				//while(waitpid(-1,&status,WNOHANG)>0);
+
 		}
+		pause();
 
 
 return 0;
@@ -71,4 +86,10 @@ return 0;
 
 
 daemon(0,0);
+}
+
+void sig_chld(int signo)
+{
+	int status;  
+	  while(waitpid(-1, &status, WNOHANG) > 0); 
 }

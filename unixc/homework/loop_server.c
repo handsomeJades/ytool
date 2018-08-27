@@ -51,6 +51,7 @@ int main()
 		while(1){
 				clfd=accept(sfd,(struct sockaddr *)&conn_addr,(socklen_t *)&con_len);
 				int len = recv(clfd,buf,sizeof(buf),0);
+				sleep(1);
 				send(clfd,msg,strlen(msg),0);
 				close(clfd);
 		}

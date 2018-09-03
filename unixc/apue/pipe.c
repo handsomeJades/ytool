@@ -16,11 +16,11 @@ int main()
 	}else if(pid>0) {
 		puts("this is parent process...");
 		close(fd[0]);
-		write(fd[1],"hello world\n",12);
+		write(fd[1],"hello world\n",20);
 	}else{
 		puts("this is child process...");
 		close(fd[1]);
-		n=read(fd[0],line,7);
+		n=read(fd[0],line,20);
 		puts(line);
 	}
 

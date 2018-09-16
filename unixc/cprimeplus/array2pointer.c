@@ -7,9 +7,9 @@ int main()
 
 	int i;
 	int *p_arr=ar;
-	printf("start address:%p\n",ar+2);
+	printf("start address:%p\n",ar+1);
 	printf("start address:%p\n",ar);
-    printf("指针差值为: %td\n",(ar+2)-ar);
+    printf("指针差值为: %hd\n",(ar+1)-ar);
 	for(i=0;i<sizeof ar / sizeof(int);i++)
 	{
 	//	printf("%d\n",p_arr[i]);

@@ -1,5 +1,5 @@
 /* 
- * 监控文件变化，执行某个操作
+ * inotify 监控文件变化，执行某个操作
  */
 #include<stdio.h>
 #include<stdlib.h>

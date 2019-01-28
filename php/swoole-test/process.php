@@ -7,6 +7,6 @@ $process=new swoole_process(function (swoole_process $process){
 $res=$process->start();
 
 var_dump($res);
-//usleep(100);
+sleep(100);
 
 echo $process->read();

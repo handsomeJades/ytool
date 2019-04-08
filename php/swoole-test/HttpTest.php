@@ -15,6 +15,6 @@ $http->on("request", function ($request, $response) {
 
 $ports=$http->ports;
 
-print_r($ports);
+//print_r($ports);
 $http->start();
 

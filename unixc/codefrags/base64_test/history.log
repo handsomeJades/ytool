@@ -1,0 +1,4 @@
+按照文件编译的过程编译，初步理解了下make的机制
+gcc -I /home/shity/src/swoole/include/ -c base64_test.c
+gcc -I /home/shity/src/swoole/include/ -c /home/shity/src/swoole/src/protocol/base64.c
+gcc -I /home/shity/src/swoole/include/  base64_test.c base64.o

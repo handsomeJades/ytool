@@ -1,5 +1,5 @@
 <?php
-swoole_timer_tick(1000, function ($timer_id) {
+swoole_timer_tick(2000, function ($timer_id) {
     //echo "tick-2000ms\n";
-		require('ip.php');
+	  echo time().PHP_EOL;  
 });

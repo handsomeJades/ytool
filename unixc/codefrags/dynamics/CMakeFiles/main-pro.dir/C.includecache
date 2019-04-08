@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shity/codefrags/dynamics/main.c
+stdio.h
+-
+test.h
+/home/shity/codefrags/dynamics/test.h
+
+/home/shity/codefrags/dynamics/test.h
+stdio.h
+-
+
+/home/shity/codefrags/dynamics/test_a.c
+stdio.h
+-
+
+/home/shity/codefrags/dynamics/test_b.c
+stdio.h
+-
+
